@@ -157,6 +157,8 @@ function editTask() {
 
 
 function createTask(title = null, description = null, key = null) {
+    const spacer = document.getElementsByClassName('spacer')[0];
+    
     if (!spacer.classList.contains('invisible')) {
         spacer.classList.add('invisible');
     }
