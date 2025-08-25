@@ -1,0 +1,188 @@
+body, html {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0b0b16;
+}
+
+main {
+    border: 1px solid #ccf7ff;
+    box-shadow: #ccf7ff 0 0 3px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #19191d;
+}
+
+button {
+    border: 1px solid #09091f;
+    box-shadow: #ccf7ff 0 0 2px;
+    border-radius: 2vw;
+    padding: 5px 10px;
+    background-color: #60d4ea;
+    cursor: pointer;
+    color: #09091f !important;
+    transition: .1s;
+}
+
+button:hover {
+    transition: .2s;
+    color: #60d4ea !important;
+    background-color: #09091f;
+}
+
+button:active {
+    transition: .01s;
+    background-color: #37373d;
+}
+
+.questlist {
+    height: 70vh !important;
+    max-height: 70vh !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 5px;
+}
+
+.quest {
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #09091f;
+    box-shadow: #1a1a31 0 0 3px;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #37373d;
+    color: #ccf7ff;
+}
+
+.quest-title {
+    width: 50%;
+}
+
+.quest-btns {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.quest-btns > button {
+    margin-left: 10px;
+}
+
+.spacer {
+    width: calc(70vw + 22px);
+    display: flex;
+    justify-content: center;
+    color: #ccf7ff;
+    transition: .2s;
+}
+
+.spacer.invisible {
+    color: #0000 !important;
+    transition: .2s;
+}
+
+@media (min-width: 1080px) {
+    .quest {
+        width: 756px !important;
+    }
+
+    .spacer {
+        width: 778px;
+    }
+}
+
+.create {
+    height: 10%;
+    padding: 5px;
+}
+
+.view-section-container {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-section {
+    border: 1px solid #ccf7ff;
+    box-shadow: #ccf7ff 0 0 3px;
+    border-radius: 20px;
+    width: 50vw !important;
+    background-color: #1a1a31;
+    padding: 20px;
+}
+
+.view-section * {
+    color: #ccf7ff;
+}
+
+.view-btns {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.view-title {
+    border: 1px solid #668088;
+    box-shadow: #668088 0 0 3px;
+    border-radius: 10px;
+    padding: 3px 5px;
+    overflow-x: scroll;
+    width: calc(100% - 10px);
+    font-size: large;
+    margin-bottom: 5px;
+    background-color: #37373d;
+}
+
+.view-description {
+    border-radius: 10px;
+    border: 1px solid #668088;
+    box-shadow: #668088 0 0 3px;
+    padding: 10px;
+    width: calc(100% - 20px);
+    resize: none;
+    font-size: large;
+    height: 50vw;
+    max-height: 50vw !important;
+    background-color: #37373d;
+}
+
+@media (min-width: 782px) {
+    .view-description {
+        transition: .3s;
+        height: 50vh !important;
+    }
+}
+
+.removing-shift {
+    transition: .5s ease;
+    transform: translateX(100vw);
+}
+
+.hidden {
+    transition: .3s;
+    transform: scaleX(0);
+    background-color: #0000;
+}
+
+.visible {
+    transition: .3s;
+    transform: scaleX(1);
+    background-color: #0009;
+}
+
+.true-hidden {
+    display: none;
+}
