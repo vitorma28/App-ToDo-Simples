@@ -6,8 +6,8 @@
     <title>App ToDo</title>
     <link rel="stylesheet" href="./style.css">
     <script src="./js/tasksObj.js"></script>
-    <script src="./js/adding.js" defer></script>
     <script src="./js/removing.js" defer></script>
+    <script src="./js/adding.js" defer></script>
     <script src="./js/editing.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
@@ -21,16 +21,28 @@
             <button class="create-btn">Adicionar tarefa</button>
         </div>
     </main>
-    <section class="hidden view-section-container">
-        <section class="view-section">
-            <div class="true-hidden view-key"></div>
+    <section class="none-ground view-section-container">
+        <div class="invisible view-section">
+            <div class="hidden view-key"></div>
             <input type="text" class="view-title" value="" placeholder="Título da tarefa">
             <textarea class="view-description" placeholder="Descrição da tarefa"></textarea>
             <div class="view-btns">
                 <button class="view-btn-save">Editar e salvar</button>
                 <button class="view-btn-exit">Sair</button>
             </div>
-        </section>
+        </div>
+    </section>
+    <section class="none-ground alert-remove-container">
+        <div class="hidden deleting-key"></div>
+        <div class="invisible alert-remove">
+            <div class="alert-remove-top">
+                Certeza que deseja remover a tarefa: <span class="remove-quest-title"></span>
+            </div>
+            <div class="alert-remove-bottom">
+                <button class="cancel-remove">Cancelar</button>
+                <button class="remove-task">Remover tarefa</button>
+            </div>
+        </div>
     </section>
 </body>
 </html>

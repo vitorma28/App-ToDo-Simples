@@ -14,7 +14,7 @@ body {
 
 main {
     border: .05rem solid #ccf7ff;
-    box-shadow: #ccf7ff 0 0 .15rem;
+    box-shadow: #ccf7ff 0 0 .23rem;
     border-radius: 1rem;
     padding: 1rem;
     background-color: #19191d;
@@ -56,7 +56,7 @@ button:active {
     align-items: center;
     justify-content: space-between;
     border: .05rem solid #09091f;
-    box-shadow: #1a1a31 0 0 .15rem;
+    box-shadow: #1a1a31 0 0 .23rem;
     border-radius: 1rem;
     padding: .5rem;
     background-color: #37373d;
@@ -116,7 +116,7 @@ button:active {
 
 .view-section {
     border: .05rem solid #ccf7ff;
-    box-shadow: #ccf7ff 0 0 .15rem;
+    box-shadow: #ccf7ff 0 0 .23rem;
     border-radius: 1rem;
     width: 50vw !important;
     background-color: #1a1a31;
@@ -136,7 +136,7 @@ button:active {
 
 .view-title {
     border: .05rem solid #668088;
-    box-shadow: #668088 0 0 .15rem;
+    box-shadow: #668088 0 0 .23rem;
     border-radius: .5rem;
     padding: .15rem .25rem;
     overflow-x: scroll;
@@ -149,21 +149,49 @@ button:active {
 .view-description {
     border-radius: .5rem;
     border: .05rem solid #668088;
-    box-shadow: #668088 0 0 .15rem;
+    box-shadow: #668088 0 0 .23rem;
     padding: .5rem;
     width: calc(100% - 1rem);
     resize: none;
     font-size: large;
-    height: 50vw;
+    height: 50vh;
     max-height: 50vw !important;
     background-color: #37373d;
 }
 
-@media (min-width: 782px) {
-    .view-description {
-        transition: .3s;
-        height: 50vh !important;
-    }
+
+.alert-remove-container {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert-remove {
+    border: .05rem solid #ccf7ff;
+    box-shadow: #ccf7ff 0 0 .23rem;
+    border-radius: 1rem;
+    width: 30vw !important;
+    min-width: fit-content !important;
+    background-color: #1a1a31;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.alert-remove-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.alert-remove-top {
+    color: #ccf7ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
 }
 
 .removing-shift {
@@ -171,18 +199,28 @@ button:active {
     transform: translateX(100vw);
 }
 
-.hidden {
-    transition: .3s;
+.invisible {
+    transition: .4s;
     transform: scaleX(0);
-    background-color: #0000;
 }
 
 .visible {
-    transition: .3s;
+    transition: .4s;
     transform: scaleX(1);
-    background-color: #0009;
 }
 
-.true-hidden {
+.dark-ground {
+    transition: .5s;
+    background-color: #0009;
+    z-index: 1;
+}
+
+.none-ground {
+    transition: .5s;
+    background-color: #0000;
+    z-index: -1;
+}
+
+.hidden {
     display: none;
 }

@@ -51,7 +51,7 @@ function loadObjToHTML() {
     }
 
     for (const btn of [...delBtns]) {
-        btn.addEventListener('click', deleteTask);
+        btn.addEventListener('click', confirmDeleting);
     }
 }
 

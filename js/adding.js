@@ -36,24 +36,32 @@ function createTask(title = null, description = null, key = null) {
         };
     }
 
-    questlist.innerHTML += `
-<div class="quest" data-key="${task.key}">
-    <div class="quest-title">${task.title}</div>
-    <div class="quest-btns">
-        <button class="quest-btn-view" data-key="${task.key}">Visualizar</button>
-        <button class="quest-btn-del" data-key="${task.key}">Remover</button>
-    </div>
-    <div class="true-hidden quest-description">${task.description}</div>
-</div>  
-`
-    ;
+    const newQuest = document.createElement('div');
 
-    const actual_quests = document.getElementsByClassName('quest');
+    newQuest.className = 'quest';
+    newQuest.setAttribute('data-key', task.key);
 
-    for (const i in [...actual_quests]) {
-        if (actual_quests[i].getAttribute('data-key') == task.key) {
-            actual_quests[i].getElementsByClassName('quest-btn-view')[0].addEventListener('click', toggleViewer);
-            actual_quests[i].getElementsByClassName('quest-btn-del')[0].addEventListener('click', deleteTask);
+    newQuest.innerHTML = `
+        <div class="quest-title">${task.title}</div>
+        <div class="quest-btns">
+            <button class="quest-btn-view" data-key="${task.key}">Visualizar</button>
+            <button class="quest-btn-del" data-key="${task.key}">Remover</button>
+        </div>
+        <div class="hidden quest-description">${task.description}</div>
+    `;
+
+    questlist.appendChild(newQuest);
+
+    const quests = document.getElementsByClassName('quest');
+
+    for (const i in [...quests]) {
+        const current = quests[i];
+
+        if (current.getAttribute('data-key') == task.key) {
+            current.getElementsByClassName('quest-btn-view')[0].addEventListener('click', toggleViewer);
+            current.getElementsByClassName('quest-btn-del')[0].addEventListener('click', confirmDeleting);
+
+            break;
         }
     }
 

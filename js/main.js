@@ -3,6 +3,8 @@
 const exitViewerBtn = document.getElementsByClassName('view-btn-exit')[0];
 const addTaskBtn = document.getElementsByClassName('create-btn')[0];
 const saveBtn = document.getElementsByClassName('view-btn-save')[0];
+const cancelRemoveBtn = document.getElementsByClassName('cancel-remove')[0];
+const removeTaskBtn = document.getElementsByClassName('remove-task')[0];
 
 let tasksObj = localStorageToObj();
 
@@ -10,6 +12,9 @@ loadObjToHTML();
 
 addTaskBtn.addEventListener('click', toggleViewer);
 exitViewerBtn.addEventListener('click', toggleViewer);
+
+cancelRemoveBtn.addEventListener('click', confirmDeleting);
+removeTaskBtn.addEventListener('click', confirmDeleting);
 
 saveBtn.addEventListener('click', function () {
     if (saveBtn.innerHTML == 'Criar') {
@@ -22,12 +27,13 @@ saveBtn.addEventListener('click', function () {
 
 
 // Visualizar/ocultar editor de tarefas
-function toggleViewer(event) {
+function toggleViewer(event) {    
     // Obtém a lista recente de deveres.
     const quests = document.getElementsByClassName('quest');
     
-    // tag do editor.
-    const viewer = document.getElementsByClassName('view-section-container')[0];
+    // tags do editor.
+    const viewerContainer = document.getElementsByClassName('view-section-container')[0];
+    const viewer = document.getElementsByClassName('view-section')[0];
 
     // Obtém o conteúdo atualizado dos valores de editor.
     const viewerTitle = viewer.getElementsByClassName('view-title')[0];
@@ -36,8 +42,10 @@ function toggleViewer(event) {
     
     // Toda vez que a função é ativada:
     // O editor troca: Ativo/Inativo.
-    viewer.classList.toggle('hidden');
+    viewerContainer.classList.toggle('dark-ground');
+    viewerContainer.classList.toggle('none-ground');
     viewer.classList.toggle('visible');
+    viewer.classList.toggle('invisible');
 
     // noAction -> Ativado quando a função é chamada
     // pelo fechamento da janela. (como clicar em salvar).
